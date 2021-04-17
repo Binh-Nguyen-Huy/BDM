@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initiap-scale=1.0">
+        <script src="https://kit.fontawesome.com/caea2bcb89.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style-store.css">
+        <title>Nike Store</title>
+    </head>
+
+    <header>
+        <div class="nav">
+            <a href="nike.html">
+                <img src="nike-logo.webp" alt="logo" class="logo" />
+            </a>
+            <!-- Nav PC -->
+            <nav class="nav__pc">
+                <ul class="nav__list">
+                    <li>
+                        <a href="nike.html" class="nav__link">HOME</a>
+                    </li>
+                    <li>
+                        <a href="nike_about-us.html" class="nav__link">ABOUT US</a>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="" class="nav__drop" id="nav__dropdown">
+                        <label for="nav__dropdown" class="nav__drop-btn">
+                            <a>PRODUCTS</a>
+                        </label>
+                        <div class="nav__drop-content">
+                            <a href="nike_browse-by-category.html">Browse Products by Category</a>
+                            <a href="nike_browse-by-time.html">Browse Products by Created Time</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="nike_contact.html" class="nav__link">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Nav Responsive -->
+            <label for="nav__responsive-input" class="nav__responsive-bars-btn">
+                <i class="fa fa-bars"></i>
+            </label>
+    
+            <input type="checkbox" name="" class="nav__input" id="nav__responsive-input">
+    
+            <label for="nav__responsive-input" class="nav__overlay"></label>
+    
+            <nav class="nav__responsive">
+                <ul class="nav__responsive-list">
+                    <li>
+                        <a href="nike.html" class="nav__responsive-link">HOME</a>
+                    </li>
+                    <li>
+                        <a href="nike_about-us.html" class="nav__responsive-link">ABOUT US</a>
+                    </li>
+                    <li>
+                        <a href="nike_browse-by-category.html" class="nav__responsive-link">Browse Products by Category</a>
+                    </li>
+                    <li>
+                        <a href="nike_browse-by-time.html" class="nav__responsive-link">Browse Products by Created Time</a>
+                    </li>
+                    <li>
+                        <a href="nike_contact.html" class="nav__responsive-link">CONTACT</a>
+                    </li>
+                </ul>
+                <label for="nav__responsive-input" class="nav__responsive-close">
+                    <i class="fa fa-times"></i>
+                </label>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+        <div class="grid">
+            <h1>Product's Categories</h1>
+            <div class="col p-12 t-12 m-12 drop-down">
+                <select>
+                  <option selected>SORT BY</option>
+                  <option>JORDAN 1 LOW</option>
+                  <option>JORDAN 1 MID</option>
+                  <option>JORDAN 1 HIGH</option>
+                  <option>NIKE DUNK</option>
+                  <option>AIR FORCE</option>
+                </select>
+            </div>
+            <hr>
+            <div class="row products">
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>NIKE AIR FORCE 1 LOW G-DRAGON PEACEMINUSONE PARA-NOISE 2.0</th>
+                                </tr>
+                            </table>   
+                            <img src="nike-product/air-force1.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: DD3223-100<br>
+                                        COLORWAY: WHITE/BLACK
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">19.000.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 HIGH ZOOM AIR CMFT CANYON RUST (W)</th>
+                                </tr>
+                            </table> 
+                            <img src="nike-product/jordan-high1.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: CT0979-602<br>
+                                        COLORWAY: CANYON RUST/SAIL
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">8.800.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>NIKE DUNK LOW UNIVERSITY RED</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/nike-dunk1.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: CU1727-100<br>
+                                        COLORWAY: WHITE/UNIVERSITY RED
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">12.800.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 LOW UNC</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/jordan-low1.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: AO9944-441<br>
+                                        COLORWAY: WHITE/UNIVERSITY BLUE
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">10.800.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 MID SBB</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/jordan-mid1.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: 554724-058<br>
+                                        COLORWAY: BLACK/WHITE-STARFISH
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">7.900.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>NIKE SB DUNK LOW BEN & JERRY'S CHUNKY DUNKY</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/nike-dunk2.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: CU3244-100<br>
+                                        COLORWAY: MULTI COLOR
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">39.000.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 LOW SHADOW</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/jordan-low2.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE:  553558-039<br>
+                                        COLORWAY: BLACK/LIGHT SMOKE
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">9.800.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>NIKE AIR FORCE 1 LOW G-DRAGON PEACEMINUSONE PARA-NOISE</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/air-force2.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: AQ3692-001<br>
+                                        COLORWAY: BLACK/WHITE
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">21.000.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 MID WHITE SHADOW</th>
+                                </tr>
+                            </table>   
+                            <img src="nike-product/jordan-mid2.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: 554724-073 <br>
+                                        COLORWAY: BLACK/MEDIUM GREY
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">7.900.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 RETRO HIGH OFF-WHITE UNIVERSITY BLUE</th>
+                                </tr>
+                            </table> 
+                            <img src="nike-product/jordan-high2.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: AQ0818-148<br>
+                                        COLORWAY: WHITE/BLUE-CONE
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">50.000.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 RETRO HIGH DARK MOCHA</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/jordan-high3.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: 555088-105<br>
+                                        COLORWAY: SAIL/DARK MOCHA
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">10.800.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 LOW PAINT DRIP (GS)</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/jordan-low3.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: CW7104-601<br>
+                                        COLORWAY: ARCTIC PUNCH/VANILLA
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">8.800.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 MID BARELY ORANGE (W)</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/jordan-mid3.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: BQ6472-800<br>
+                                        COLORWAY: BARELY ORANGE/BLACK
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">9.500.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>NIKE AIR FORCE 1 LOW TRAVIS SCOTT CACTUS JACK</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/air-force3.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: CN2405-900<br>
+                                        COLORWAY: MUTED BRONZE-FOSSI
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">16.500.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>NIKE DUNK LOW MEDIUM CURRY</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/nike-dunk3.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: DD1390-100<br>
+                                        COLORWAY: SAIL/CURRY-FOSSIL
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">9.200.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 MID CHICAGO BLACK TOE</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/jordan-mid4.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: 554724-069<br>
+                                        COLORWAY: BLACK/GYM RED-WHITE
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">7.200.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 LOW GALAXY (W)</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/jordan-low4.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: CW7310-909<br>
+                                        COLORWAY: BLACK/MULTI-COLOR
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">6.900.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>NIKE AIR FORCE 1 07 QS VALENTINE'S DAY LOVE LETTER</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/air-force4.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: DD3384-600<br>
+                                        COLORWAY: PINK/UNIVERSITY RED
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">5.900.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>JORDAN 1 RETRO HIGH UNION LOS ANGELES BLACK TOE</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/jordan-high4.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: BV1300-106<br>
+                                        COLORWAY: WHITE/VARSITY RED
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">28.000.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+                <div class="col p-3 t-6 m-12">
+                    <div class="products">
+                        <a href="nike_product-detail.html">
+                            <table>
+                                <tr>
+                                    <th>NIKE DUNK LOW COAST (W)</th>
+                                </tr>
+                            </table>
+                            <img src="nike-product/nike-dunk4.webp" alt="store" class="products-img">
+                            <table>
+                                <tr class="description">
+                                    <td colspan="2">
+                                        CODE: DD1503-100<br>
+                                        COLORWAY: SAIL/COAST/GOLD
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="price">8.200.000 ₫</td>
+                                    <td class="date">10/4/21</td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer class="footer__distributed">
+        <div class="footer__left">
+            <img src="nike-logo.webp" class="footer__logo">
+            <p class="footer__links">
+                <a href="nike.html">HOME</a>
+                |
+                <a href="nike_about-us.html">ABOUT US</a>
+                |
+                <a href="nike_browse-by-category.html">Browse Products by Category</a>
+                |
+                <a href="nike_browse-by-time.html">Browse Products by Created Time</a>
+                |
+                <a href="nike_contact.html">CONTACT</a>
+            </p>
+        </div>
+        <div class="footer__right">
+            <p class="footer__company-about">
+                <span>About Nike</span>
+                Our mission is what drives us to do everything possible to expand human potential. We do that by creating groundbreaking sport innovations, by making our products more sustainably, by building a creative and diverse global team and by making a positive impact in communities where we live and work. Based in Beaverton, Oregon, NIKE, Inc. includes the Nike, Converse, and Jordan brands.</p>
+            <div class="footer__icons">
+                <a href="https://www.facebook.com/nike"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/nike/"><i class="fa fa-instagram"></i></a>
+                <a href="https://twitter.com/nike"><i class="fa fa-twitter"></i></a>
+            </div>
+            <p class="footer__links">
+                <a href="nike_ToS.html">Term of Service</a>
+                |
+                <a href="nike_privacy.html">Privacy Policy</a>
+                |
+                <a href="nike_copyright.html">Copyright</a>
+            </p>
+            <p class="footer__company-name">© 2021 BDM Team.</p>
+        </div>
+    </footer>
+</html>
