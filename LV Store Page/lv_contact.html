@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initiap-scale=1.0">
+        <script src="https://kit.fontawesome.com/caea2bcb89.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style-store.css">
+        <title>LV Store</title>
+    </head>
+
+    <header>
+        <div class="nav">
+            <a href="lv.html">
+                <img src="lv-logo.webp" alt="logo" class="logo" />
+            </a>
+            <!-- Nav PC -->
+            <nav class="nav__pc">
+                <ul class="nav__list">
+                    <li>
+                        <a href="lv.html" class="nav__link">HOME</a>
+                    </li>
+                    <li>
+                        <a href="lv_about-us.html" class="nav__link">ABOUT US</a>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="" class="nav__drop" id="nav__dropdown">
+                        <label for="nav__dropdown" class="nav__drop-btn">
+                            <a>PRODUCTS</a>
+                        </label>
+                        <div class="nav__drop-content">
+                            <a href="lv_browse-by-category.html">Browse Products by Category</a>
+                            <a href="lv_browse-by-time.html">Browse Products by Created Time</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="lv_contact.html" class="nav__link">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Nav Responsive -->
+            <label for="nav__responsive-input" class="nav__responsive-bars-btn">
+                <i class="fa fa-bars"></i>
+            </label>
+    
+            <input type="checkbox" name="" class="nav__input" id="nav__responsive-input">
+    
+            <label for="nav__responsive-input" class="nav__overlay"></label>
+    
+            <nav class="nav__responsive">
+                <ul class="nav__responsive-list">
+                    <li>
+                        <a href="lv.html" class="nav__responsive-link">HOME</a>
+                    </li>
+                    <li>
+                        <a href="lv_about-us.html" class="nav__responsive-link">ABOUT US</a>
+                    </li>
+                    <li>
+                        <a href="lv_browse-by-category.html" class="nav__responsive-link">Browse Products by Category</a>
+                    </li>
+                    <li>
+                        <a href="lv_browse-by-time.html" class="nav__responsive-link">Browse Products by Created Time</a>
+                    </li>
+                    <li>
+                        <a href="lv_contact.html" class="nav__responsive-link">CONTACT</a>
+                    </li>
+                </ul>
+                <label for="nav__responsive-input" class="nav__responsive-close">
+                    <i class="fa fa-times"></i>
+                </label>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+        <div class = "grid contact">
+            <div class="row">
+                <div class="col p-12 t-12 m-12">
+                    <h1>Contact Us</h1>
+                    <form action="action_page.php" method="get">
+                        <div class="contact_container">
+                            <label for="contact_purpose"><b>Contact Purpose</b></label><br>
+                            <select name="contact_purpose" id="contact_store">
+                                <option value="Asking about Products" Selected>Asking about Products</option>
+                                <option value="Giving Feedbacks" Selected>Giving Feedbacks</option>
+                                <option value="Getting Refunds" Selected>Getting Refunds</option>
+                                <option value="Other Purposes" Selected>Others</option>
+                            </select>
+
+                            <label for="Name"><b>Your Name</b></label>
+                            <input type="text" placeholder="Enter Your Name" name="Name" required>
+                        
+                            <label for="email"><b>Email</b></label>
+                            <input type="email" placeholder="Enter Email" name="email" required>
+                        
+                            <label for="phone"><b>Phone Number</b></label>
+                            <input type="tel" placeholder="Phone Number" name="phone" required>
+
+                            <label for="Contact Days"><b id="">Contact Days</b></label><br>
+                            
+                            <input type="checkbox" id="" name="Contact Days" value="Monday" >
+                            <label for="Contact Days" id=""> Monday</label>
+
+                            <input type="checkbox" id="" name="Contact Days" value="Tuesday" >
+                            <label for="Contact Days" id=""> Tuesday</label>
+
+                            <input type="checkbox" id="" name="Contact Days" value="Wednesday" >
+                            <label for="Contact Days" id=""> Wednesday</label><br>
+
+                            <input type="checkbox" id="" name="Contact Days" value="Thursday" >
+                            <label for="Contact Days" id=""> Thursday</label>
+
+                            <input type="checkbox" id="" name="Contact Days" value="Friday" >
+                            <label for="Contact Days" id=""> Friday</label>
+
+                            <input type="checkbox" id="" name="Contact Days" value="Saturday" >
+                            <label for="Contact Days" id=""> Saturday</label><br>
+
+                            <input type="checkbox" id="" name="Contact Days" value="Sunday" >
+                            <label for="Contact Days" id=""> Sunday</label>
+
+                            <div>
+                                <br><label for="message_store"><b>Your Message</b></label>
+                                <textarea name="Text1" cols="40" rows="5" style="width: 100%;" required></textarea>
+
+                            </div>
+                        </div>
+
+                        
+                        <div class="contact_container">
+                            <button type="submit" class="contact_btn submit-btn" value="submit" id="contact_store">Submit</button>
+                            <button type="reset" class="contact_btn reset-btn">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer class="footer__distributed">
+        <div class="footer__left">
+            <img src="lv-logo.webp" class="footer__logo">
+            <p class="footer__links">
+                <a href="lv.html">HOME</a>
+                |
+                <a href="lv_about-us.html">ABOUT US</a>
+                |
+                <a href="lv_browse-by-category.html">Browse Products by Category</a>
+                |
+                <a href="lv_browse-by-time.html">Browse Products by Created Time</a>
+                |
+                <a href="lv_contact.html">CONTACT</a>
+            </p>
+        </div>
+        <div class="footer__right">
+            <p class="footer__company-about">
+                <span>About the company</span>
+                Louis Vuitton Malletier, commonly known as Louis Vuitton or by its initials LV, is a French fashion house and luxury goods company founded in 1854 by Louis Vuitton. The label's LV monogram appears on most of its products, ranging from luxury trunks and leather goods to ready-to-wear, shoes, watches, jewelry, accessories, sunglasses and books. Louis Vuitton is one of the world's leading international fashion houses.</p>
+            <div class="footer__icons">
+                <a href="https://www.facebook.com/LouisVuitton"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/louisvuitton/"><i class="fa fa-instagram"></i></a>
+                <a href="https://twitter.com/louisvuitton"><i class="fa fa-twitter"></i></a>
+            </div>
+            <p class="footer__links">
+                <a href="lv_ToS.html">Term of Service</a>
+                |
+                <a href="lv_privacy.html">Privacy Policy</a>
+                |
+                <a href="lv_copyright.html">Copyright</a>
+            </p>
+            <p class="footer__company-name">© 2021 BDM Team.</p>
+        </div>
+    </footer>
+</html>
