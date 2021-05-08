@@ -76,7 +76,7 @@
             <div class="row">
                 <div class="col p-12 t-12 m-12">
                     <h1>Contact Us</h1>
-                    <form action="action_page.php" method="get">
+                    <form action="#" id="form" method="get">
                         <div class="contact_container">
                             <label for="contact_purpose"><b>Contact Purpose</b></label><br>
                             <select name="contact_purpose" id="contact_store">
@@ -87,53 +87,89 @@
                             </select>
 
                             <label for="Name"><b>Your Name</b></label>
-                            <input type="text" placeholder="Enter Your Name" name="Name" required>
-                        
+                            <input type="text" placeholder="Enter Your Name" id="lv_name_contact" name="Name" onkeyup="ValidName()" required><br>
+                            <span id="name_announce"></span>
+                            <br>
+
+
                             <label for="email"><b>Email</b></label>
-                            <input type="email" placeholder="Enter Email" name="email" required>
+                            <input type="email" placeholder="Enter Email" id="lv_email_contact" onkeyup="ValidateEmail()" name="email" required><br>
+                            <span id ="text_mail_announce"></span>
+                            <br>
                         
                             <label for="phone"><b>Phone Number</b></label>
-                            <input type="tel" placeholder="Phone Number" name="phone" required>
+                            <input type="tel" placeholder="Phone Number" id="lv_phone_contact" onkeyup="ValidatePhone()" name="phone" required><br>
+                            <span id ="phone_announce"></span>
+                            <br>
 
                             <label for="Contact Days"><b id="">Contact Days</b></label><br>
                             
-                            <input type="checkbox" id="" name="Contact Days" value="Monday" >
+                            <input type="checkbox" id="" class="Contact_Days" name="Contact Days" value="Monday" >
                             <label for="Contact Days" id=""> Monday</label>
 
-                            <input type="checkbox" id="" name="Contact Days" value="Tuesday" >
+                            <input type="checkbox" id="" class="Contact_Days" name="Contact Days" value="Tuesday" >
                             <label for="Contact Days" id=""> Tuesday</label>
 
-                            <input type="checkbox" id="" name="Contact Days" value="Wednesday" >
+                            <input type="checkbox" id="" class="Contact_Days" name="Contact Days" value="Wednesday" >
                             <label for="Contact Days" id=""> Wednesday</label><br>
 
-                            <input type="checkbox" id="" name="Contact Days" value="Thursday" >
+                            <input type="checkbox" id="" class="Contact_Days" name="Contact Days" value="Thursday" >
                             <label for="Contact Days" id=""> Thursday</label>
 
-                            <input type="checkbox" id="" name="Contact Days" value="Friday" >
+                            <input type="checkbox" id="" class="Contact_Days" name="Contact Days" value="Friday" >
                             <label for="Contact Days" id=""> Friday</label>
 
-                            <input type="checkbox" id="" name="Contact Days" value="Saturday" >
+                            <input type="checkbox" id="" class="Contact_Days" name="Contact Days" value="Saturday" >
                             <label for="Contact Days" id=""> Saturday</label><br>
 
-                            <input type="checkbox" id="" name="Contact Days" value="Sunday" >
-                            <label for="Contact Days" id=""> Sunday</label>
+                            <input type="checkbox" id="" class="Contact_Days" name="Contact Days" value="Sunday" >
+                            <label for="Contact Days" id=""> Sunday</label><br>
+
+                            <br>
+                            <span id="day_announce"></span>
+                            <br>
 
                             <div>
                                 <br><label for="message_store"><b>Your Message</b></label>
-                                <textarea name="Text1" cols="40" rows="5" style="width: 100%;" required></textarea>
+                                <textarea id="Text_Box" name="Text1" cols="40" rows="5" style="width: 100%;" onkeyup="BoxMessage()" required></textarea>
+
+                                <br>
+                                <span id ="mess_box"></span>
+                                <br>
 
                             </div>
                         </div>
 
                         
                         <div class="contact_container">
-                            <button type="submit" class="contact_btn submit-btn" value="submit" id="contact_store">Submit</button>
+                            <button type="submit" class="contact_btn submit-btn" value="submit" id="contact_store" onkeyup="Valid()" onkeyup="ValidName()" onkeyup="BoxMessage()" onkeyup="ValidateEmail()" onkeyup="ValidatePhone()" onclick="Valid()">Submit</button>
                             <button type="reset" class="contact_btn reset-btn">Reset</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+
+        <div class="cookies-container" id="nike_page">
+            
+            <h1>I use cookies</h1>
+                
+            <p>My website uses cookies necessary for its basic functioning. By continuing browsing, you consent to my use of cookies and other technologies</p>
+
+            <div class="row">
+                <div class="col p-2 t-12 m-12">
+                    <button class="btn-cookies" id="nike_page">
+                        I understand
+                    </button>
+                </div>
+
+                <div class="col p-2 t-12 m-12">
+                    <a href="">Learn More</a>
+                </div>
+            </div>
+          </div>
+
+          <script src="nike-store.js"></script>
     </body>
 
     <footer class="footer__distributed">

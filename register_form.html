@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initiap-scale=1.0">
-        <script src="https://kit.fontawesome.com/caea2bcb89.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css">
         <title>BDM Mall</title>
     </head>
@@ -26,7 +26,7 @@
                         <a href="fees.html" class="nav__link">FEES</a>
                     </li>
                     <li>
-                        <a href="my_account.html" class="nav__link">MY ACCOUNT</a>
+                        <a href="my_account_2.html" class="nav__link">MY ACCOUNT</a>
                     </li>
                     <li>
                         <input type="checkbox" name="" class="nav__drop" id="nav__dropdown">
@@ -67,7 +67,7 @@
                         <a href="fees.html" class="nav__responsive-link">FEES</a>
                     </li>
                     <li>
-                        <a href="my_account.html" class="nav__responsive-link">MY ACCOUNT</a>
+                        <a href="my_account_2.html" class="nav__responsive-link">MY ACCOUNT</a>
                     </li>
                     <li>
                         <a href="browse-by-name.html" class="nav__responsive-link">Browse Stores by Name</a>
@@ -95,61 +95,85 @@
                     <div class="col p-12 m-12 t-12">
                         <h1 id="register_account">Register Your Account</h1>
                     </div>
-                    <form action="action_page.php" method="post" id="register_form">
+                    <form action="#" method="POST" id="form">
                         <div class="row">
                             <div class="col p-6 m-12 t-12">
                                 <div>
                                     <label for="email"><b id="register_label">Email</b></label><br>
-                                    <input type="email" placeholder="Enter Email" name="email" id="register_input" required><br><br>
+                                    <input type="email" placeholder="Enter Email" name="email" id="register_input_email" onkeyup="ValidateEmail_register()" required><br><br>
+
+                                    <span style="margin-left: 10%;" id ="text_mail_announce"></span>
+                                    <br>
                                 </div>
                             </div>
 
                             <div class="col p-6 m-12 t-12">
                                 <div>
                                     <label for="phone_num"><b id="register_label">Phone Number</b></label><br>
-                                    <input type="tel" placeholder="Enter Phone Number" name="phone_num" id="register_input" required><br><br>
+                                    <input type="tel" placeholder="Enter Phone Number" name="phone_num" id="register_input_phone" onkeyup="ValidatePhone_register()" required><br><br>
+
+                                    <span style="margin-left: 10%;" id ="phone_announce"></span>
+                                    <br>
                                 </div>
                             </div>
 
                             <div class="col p-6 m-12 t-12">
                                 <div>
                                     <label for="password"><b id="register_label">Password</b></label><br>
-                                    <input type="password" placeholder="Enter Your Password" name="password" id="register_input" required><br><br>
+                                    <input type="password" placeholder="Enter Your Password" name="password" id="register_input_pass" onkeyup="ValidPwd(), checkPass()" onblur="checkPass()"  required><br><br>
+
+                                    <span style="margin-left: 10%;" id ="pass_announce"></span>
+                                    <br>
                                 </div>
                             </div>
 
                             <div class="col p-6 m-12 t-12">
                                 <div>
                                     <label for="repeat_pwd"><b id="register_label">Repeat Password</b></label><br>
-                                    <input type="password" placeholder="Repeat Your Password" name="repeat_pwd" id="register_input" required><br><br>
+                                    <input type="password" placeholder="Repeat Your Password" name="repeat_pwd" id="register_input_repeat_pwd" onkeyup="checkPass()"required><br><br>
+
+                                    <span style="margin-left: 10%;" id ="repeatpass_announce"></span>
+                                    <br>
                                 </div>
                             </div>
 
                             <div class="col p-6 m-12 t-12">
                                 <div>
                                     <label for="first_name"><b id="register_label">First Name</b></label><br>
-                                    <input type="text" placeholder="First Name" name="first_name" id="register_input" required><br><br>
+                                    <input type="text" placeholder="First Name" name="first_name" id="register_input_first_name" onkeyup="validNameAll('register_input_first_name', 'name_announce')" required><br><br>
+
+                                    <span style="margin-left: 10%;" id ="name_announce"></span>
+                                    <br>
                                 </div>
                             </div>
 
                             <div class="col p-6 m-12 t-12">
                                 <div>
                                     <label for="last_name"><b id="register_label">Last Name</b></label><br>
-                                    <input type="text" placeholder="Last Name" name="last_name" id="register_input" required><br><br>
+                                    <input type="text" placeholder="Last Name" name="last_name" id="register_input_last_name" onkeyup="validNameAll('register_input_last_name', 'name_announce_1')" required><br><br>
+
+                                    <span style="margin-left: 10%;" id ="name_announce_1"></span>
+                                    <br>
                                 </div>
                             </div>
 
                             <div class="col p-6 m-12 t-12">
                                 <div>
                                     <label for="address"><b id="register_label">Your Address</b></label><br>
-                                    <input type="text" placeholder="Enter Your Address" name="address" id="register_input" required><br><br>
+                                    <input type="text" placeholder="Enter Your Address" name="address" id="register_input_address" onkeyup="validAddress('register_input_address', 'name_announce_3')" required><br><br>
+
+                                    <span style="margin-left: 10%;" id ="name_announce_3"></span>
+                                    <br>
                                 </div>
                             </div>
 
                             <div class="col p-6 m-12 t-12">
                                 <div>
                                     <label for="city"><b id="register_label">City</b></label><br>
-                                    <input type="text" placeholder="Enter Your City" name="city" id="register_input" required><br><br>
+                                    <input type="text" placeholder="Enter Your City" name="city" id="register_input_city" onkeyup="validNameAll('register_input_city', 'name_announce_4')" required><br><br>
+
+                                    <span style="margin-left: 10%;" id ="name_announce_4"></span>
+                                    <br>
                                 </div>
                             </div>
 
@@ -380,7 +404,10 @@
                             <div class="col p-6 m-12 t-12">
                                 <div class="reg-input">
                                     <label for="zipcode"><b id="register_label">Zip Code</b></label><br>
-                                    <input type="number" placeholder="Enter Zip Code" name="zipcode" id="register_input" minlength="4" maxlength="6" required><br><br>
+                                    <input type="number" placeholder="Enter Zip Code" name="zipcode" id="register_input_zip" minlength="4" maxlength="6" onkeyup="Validatzipcode_register()" required><br><br>
+
+                                    <span style="margin-left: 10%;" id ="zip_announce"></span>
+                                    <br>
                                 </div>
                             </div>
 
@@ -390,12 +417,12 @@
                                 </div>
                                 
                                 <div class="col p-6 m-12 t-12">
-                                    <input type="radio" id="register_input" name="Account_Type" value="Store Owner">
+                                    <input type="radio" id="register_input_1" name="Account_Type" value="Store Owner" onclick="checkDisplay()" required>
                                     <label for="Account Type" id="register_label">Store Owner</label>
                                 </div>
 
                                 <div class="col p-6 m-12 t-12">
-                                    <input type="radio" id="register_input" name="Account_Type" value="Shopper">
+                                    <input type="radio" id="register_input_2" name="Account_Type" value="Shopper" onclick="checkDisplay()">
                                     <label for="shopper" id="register_label">Shopper</label>
                                 </div>
                             </div>
@@ -409,91 +436,92 @@
                             </div>
                         </div>
 
-                        <div class="only_register">
-                            <h2>Only applied for Store Owner</h2>
+                
+                            <div class="only_register" id="content_head_apply" style="display: none;">
+                                <h2>Only applied for Store Owner</h2>
+                            </div>
+                            <div class="row" id="abc" style="display: none;">
+                        
+                                    <div class="col p-6 m-12 t-12">
+                                        <label for="business_name"><b id="register_label">Business Name</b></label><br>
+                                        <input type="text"  placeholder="Enter Business Name" name="business_name" id="register_input"><br><br>
+                                    </div>
+
+                                    <div class="col p-6 m-12 t-12">
+                                        <label for="store_name"><b id="register_label">Store Name</b></label><br>
+                                        <input type="text" placeholder="Enter Store Name" name="store_name" id="register_input"><br><br>
+                                    </div>
+
+                                    <div class="col p-12 m-12 t-12">
+                                        <p id="store_register_categories">Store Categories</p>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Kiosk" >
+                                        <label for="vehicle1" id="register_label"> Kiosk</label>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Services">
+                                        <label for="vehicle1" id="register_label"> Services</label>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Thrift Stores">
+                                        <label for="vehicle1" id="register_label"> Thrift Stores</label>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Speciality Stores">
+                                        <label for="vehicle1" id="register_label"> Speciality Stores</label><br>
+                                    </div>
+                                    
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Toy Stores">
+                                        <label for="vehicle1" id="register_label"> Toy Stores</label><br>
+                                    </div>
+                                    
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Pet Stores">
+                                        <label for="vehicle1" id="register_label"> Pet Stores</label><br>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Technology Stores">
+                                        <label for="vehicle1" id="register_label"> Technology</label><br>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Pharmacies">
+                                        <label for="vehicle1" id="register_label"> Pharmacies</label><br>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Glocery Store">
+                                        <label for="vehicle1" id="register_label"> Glocery Stores</label><br>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Accessories Store">
+                                        <label for="vehicle1" id="register_label"> Accessory Stores</label><br>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Restaurants">
+                                        <label for="vehicle1" id="register_label"> Restaurants</label><br>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Department Stores">
+                                        <label for="vehicle1" id="register_label"> Department</label><br>
+                                    </div>
+
+                                    <div class="col p-3 m-12 t-12">
+                                        <input type="checkbox" id="register_input" name="Store Categories" value="Clothing Store">
+                                        <label for="vehicle1" id="register_label"> Clothing Stores</label><br>
+                                    </div>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col p-6 m-12 t-12">
-                                <label for="business_name"><b id="register_label">Business Name</b></label><br>
-                                <input type="text" placeholder="Enter Business Name" name="business_name" id="register_input"><br><br>
-                            </div>
-
-                            <div class="col p-6 m-12 t-12">
-                                <label for="store_name"><b id="register_label">Store Name</b></label><br>
-                                <input type="text" placeholder="Enter Store Name" name="store_name" id="register_input"><br><br>
-                            </div>
-
-                            <div class="col p-12 m-12 t-12">
-                                <p id="store_register_categories">Store Categories</p>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Kiosk" >
-                                <label for="vehicle1" id="register_label"> Kiosk</label>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Services">
-                                <label for="vehicle1" id="register_label"> Services</label>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Thrift Stores">
-                                <label for="vehicle1" id="register_label"> Thrift Stores</label>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Speciality Stores">
-                                <label for="vehicle1" id="register_label"> Speciality Stores</label><br>
-                            </div>
-                            
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Toy Stores">
-                                <label for="vehicle1" id="register_label"> Toy Stores</label><br>
-                            </div>
-                            
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Pet Stores">
-                                <label for="vehicle1" id="register_label"> Pet Stores</label><br>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Technology Stores">
-                                <label for="vehicle1" id="register_label"> Technology</label><br>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Pharmacies">
-                                <label for="vehicle1" id="register_label"> Pharmacies</label><br>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Glocery Store">
-                                <label for="vehicle1" id="register_label"> Glocery Stores</label><br>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Accessories Store">
-                                <label for="vehicle1" id="register_label"> Accessory Stores</label><br>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Restaurants">
-                                <label for="vehicle1" id="register_label"> Restaurants</label><br>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Department Stores">
-                                <label for="vehicle1" id="register_label"> Department</label><br>
-                            </div>
-
-                            <div class="col p-3 m-12 t-12">
-                                <input type="checkbox" id="register_input" name="Store Categories" value="Clothing Store">
-                                <label for="vehicle1" id="register_label"> Clothing Stores</label><br>
-                            </div>
-
-                        </div>
-
                         <div class="row">
                             <div class="col p-6 m-12 t-12">
                                 <div class="center-btn">
@@ -509,6 +537,28 @@
                     </form>
             </div>
         </div>
+
+        <div class="cookies-container" id="mall">
+            
+            <h1>I use cookies</h1>
+                
+            <p>My website uses cookies necessary for its basic functioning. By continuing browsing, you consent to my use of cookies and other technologies</p>
+
+            <div class="row">
+                <div class="col p-2 t-12 m-12">
+                    <button class="btn-cookies" id="mall">
+                        I understand
+                    </button>
+                </div>
+
+                <div class="col p-2 t-12 m-12">
+                    <a href="">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="javascript/main.js"></script>
+        <script src="javascript/cookies.js"></script>
     </body>
     
     <footer class="footer__distributed">
@@ -521,7 +571,7 @@
                 |
                 <a href="fees.html">FEES</a>
                 |
-                <a href="my_account.html">MY ACCOUNT</a>
+                <a href="my_account_2.html">MY ACCOUNT</a>
                 |
                 <a href="browse-by-name.html">Browse Stores by Name</a>
                 |

@@ -948,3 +948,44 @@ footer {
         margin-right: auto;
     }
 }
+
+/* cookies consent*/
+.cookies-container{
+    height: 400px;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    padding: 0 40px;
+    transition: 400ms;
+    color: white;
+}
+
+.cookies-container.active{
+    bottom: 0;
+}
+
+.cookies-container a{
+    color: green;
+    font-size: 20px;
+}
+
+.cookies-container#lv_page{
+    background: #0080ff;
+    font-size: 20px;
+}
+
+.btn-cookies{
+    cursor: pointer;
+    border: 0;
+    color: black;
+    padding: 12px 48px;
+    font-size: 18px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.btn-cookies#lv_page{
+    background: yellow;
+}

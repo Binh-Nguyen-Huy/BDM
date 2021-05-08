@@ -22,11 +22,15 @@ th, td {
     padding: 8px;
     text-align: left;
     border: 1px solid rgb(161, 161, 161);
-    max-width: 50px;
+    max-width: 50px; 
 }
 
 th {
     background-color: gray;
+}
+
+button {
+    outline: none;
 }
 
 tr:nth-child(even) {
@@ -165,6 +169,18 @@ tr:hover {
     margin-right: auto;
 }
 
+.products th, td {
+    border: none;
+}
+
+.products td {
+    height: 60px;
+}
+
+.products tr:nth-child(even) {
+    background-color: transparent;
+}
+
 .products h3 {
     text-align: center;
     font-size: 20px;
@@ -179,8 +195,8 @@ tr:hover {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 200;
     color: gray;
-    padding: 8px 0;
-    margin: 15px;
+    margin-top: -5px;
+    margin-bottom: -5px;
 }
 
 .products a {
@@ -199,6 +215,54 @@ tr:hover {
     background-color: whitesmoke;
     padding-bottom: 10px;
     padding-top: 10px;
+}
+
+/*Carousel*/
+.ec {
+    position:relative
+}
+.ec .ec__holder {
+    overflow:hidden;
+}
+.ec .ec__track { 
+    will-change:transform
+}
+.ec .ec__track:after { 
+    content:'';
+    display:table;
+    clear:both
+}
+.ec .ec__item {
+    float:left;
+    overflow:hidden;
+}
+
+.ec .ec__nav {
+    position:absolute;
+    bottom:10px;
+    border-top:2px solid #000;
+    border-right:2px solid #000;
+    width: 20px;
+    height: 20px;
+}
+.ec .ec__nav:before {
+    content:''
+}
+.ec .ec__nav--prev {
+    transform:rotate(-135deg);
+    left:1em
+}
+.ec .ec__nav--next {
+    transform:rotate(45deg);
+    right:1em
+}
+
+.carousel-tablet {
+    display: none;
+}
+
+.carousel-phone {
+    display: none;
 }
 
 /*Account*/
@@ -373,6 +437,74 @@ input[type=email], input[type=tel] {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* About Us Modal*/
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.show-modal {
+    background-color: transparent;
+    box-shadow: unset;
+    margin: auto;
+    pointer-events: none;
+}
+
+.modal-button:focus {
+    outline: none;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #eaf0f2;
+    margin: auto;
+    padding: 20px;
+    width: 100%;
+    height: fit-content;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    pointer-events: all;
+}
+
+.modal-content h1 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: auto;
+}
+
+.modal-content i {
+    color: #33383b;
+}
+
+.modal-content p {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.close {
+    color: #666;
+    float: right;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-top: -10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /*Contact*/
 select#contact_mall {
     width: 100%;
@@ -425,6 +557,58 @@ select#contact_mall {
     background-color: black;
 }
 
+/*Product Toast*/
+#snackbar-container{
+    position: fixed;
+    top: 55px;
+    right: -30px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.snackbar{
+    padding: 1.5rem 1rem;
+    margin: 0.5rem;
+    width: 260px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0, 0.7);
+    color: whitesmoke;
+    font-size: 14px;
+    animation: fade-in 3s ease ;
+}
+
+.snackbar span{
+    float: right;
+    cursor: pointer;
+}
+
+.success{
+    background-color: green;
+}
+
+.fadeout{
+    animation: fade-out 1s ease 2s forwards;
+}
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
 /*Order*/
 .order-product {
     margin-top: -30px;
@@ -462,6 +646,8 @@ select#contact_mall {
     text-align: center;
     font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 50px;
+    height: 40px;
 }
 
 input[type=number]#quantity_value {
@@ -523,15 +709,17 @@ form#register_form {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-input[type=text]#register_input, input[type=email]#register_input,
-input[type=password]#register_input, input[type=tel]#register_input,
-input[type=number]#register_input {
+input[type=text]#register_input, input[type=email]#register_input_email,
+input[type=password]#register_input_pass, input[type=password]#register_input_repeat_pwd, input[type=tel]#register_input_phone,
+input[type=number]#register_input, input[type=text]#register_input_first_name,
+input[type=text]#register_input_last_name, input[type=text]#register_input_address,
+input[type=text]#register_input_city, input[type=number]#register_input_zip {
     width: 70%;
     margin-left: 10%;
     height: 45px;
 }
 
-input[type=radio]#register_input {
+input[type=radio]#register_input, input[type=radio]#register_input_1,  input[type=radio]#register_input_2{
     margin-left: 20%;
     width: 10%;
     height: 30px;
@@ -627,6 +815,7 @@ label#register_label {
 }
 
 .nav {
+    z-index: 1;
     display: flex;
     align-items: center;
     width: 100%;
@@ -1027,6 +1216,19 @@ footer {
     .profile-responsive a {
         font-size: 16px;
     }
+
+    /*Carousel*/
+    .carousel-pc {
+        display: none;
+    }
+
+    .carousel-tablet {
+        display: none;
+    }
+
+    .carousel-phone {
+        display: block;
+    }
 }
 
 /*Tablet layout*/
@@ -1177,4 +1379,59 @@ footer {
     .profile-responsive a {
         font-size: 25px;
     }
+
+    /*Carousel*/
+    .carousel-pc {
+        display: none;
+    }
+
+    .carousel-phone {
+        display: none;
+    }
+
+    .carousel-tablet {
+        display: block;
+    }
+}
+
+/* cookies consent*/
+.cookies-container{
+    height: 400px;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    padding: 0 40px;
+    transition: 400ms;
+    color: white;
+}
+
+.cookies-container.active{
+    bottom: 0;
+}
+
+.cookies-container a{
+    color: mediumvioletred;
+    font-size: 20px;
+}
+   
+
+.cookies-container#mall{
+    background: #202022;
+    font-size: 20px;
+}
+
+.btn-cookies{
+    cursor: pointer;
+    border: 0;
+    color: whitesmoke;
+    padding: 12px 48px;
+    font-size: 18px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.btn-cookies#mall{
+    background: green;
 }
