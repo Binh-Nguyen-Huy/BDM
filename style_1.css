@@ -1436,6 +1436,16 @@ footer {
     background: green;
 }
 
+.select_form{
+    text-align: center;
+    font-size: 30px;
+}
+
+#option_form{
+    width: 250px;
+    height: 50px;
+}
+
 .error{
     color: maroon;
 }

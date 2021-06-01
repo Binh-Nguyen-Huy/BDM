@@ -1,3 +1,24 @@
+<?php include_once "file_exist.php" ?>
+
+<?php
+include("global_func.php");
+$products = new CSVHandler('data/products.csv');
+$stores = new CSVHandler('data/stores.csv');
+$productId = $_GET['id'] ?? 0;
+$filter = [
+	['id', $productId]
+];
+$getFirstRecord = true;
+$productInformation = $products->getData($filter, $getFirstRecord);
+
+$filter = [
+	['id', $productInformation['store_id']]
+];
+$getFirstRecord = true;
+$storeInformation = $stores->getData($filter, $getFirstRecord);
+
+if(empty($productInformation)) die('can not get store information, please check store id input!');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,19 +26,19 @@
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css">
-        <title>BDM Mall</title>
+        <title>BDM Mall - <?php echo $productInformation['name']. ' - ' . $storeInformation['name'];?></title>
     </head>
 
     <header>
         <div class="nav">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="logo.webp" alt="logo" class="logo" />
             </a>
             <!-- Nav PC -->
             <nav class="nav__pc">
                 <ul class="nav__list">
                     <li>
-                        <a href="index.html" class="nav__link">HOME</a>
+                        <a href="index.php" class="nav__link">HOME</a>
                     </li>
                     <li>
                         <a href="about_us.html" class="nav__link">ABOUT US</a>
@@ -34,8 +55,8 @@
                             <a>BROWSE</a>
                         </label>
                         <div class="nav__drop-content">
-                            <a href="browse-by-name.html">Browse Stores by Name</a>
-                            <a href="browse-by-category.html">Browse Stores by Category</a>
+                            <a href="browse-by-name.php">Browse Stores by Name</a>
+                            <a href="browse-by-category.php">Browse Stores by Category</a>
                         </div>
                     </li>
                     <li>
@@ -58,7 +79,7 @@
             <nav class="nav__responsive">
                 <ul class="nav__responsive-list">
                     <li>
-                        <a href="index.html" class="nav__responsive-link">HOME</a>
+                        <a href="index.php" class="nav__responsive-link">HOME</a>
                     </li>
                     <li>
                         <a href="about_us.html" class="nav__responsive-link">ABOUT US</a>
@@ -70,10 +91,10 @@
                         <a href="my_account_2.html" class="nav__responsive-link">MY ACCOUNT</a>
                     </li>
                     <li>
-                        <a href="browse-by-name.html" class="nav__responsive-link">Browse Stores by Name</a>
+                        <a href="browse-by-name.php" class="nav__responsive-link">Browse Stores by Name</a>
                     </li>
                     <li>
-                        <a href="browse-by-category.html" class="nav__responsive-link">Browse Stores by Category</a>
+                        <a href="browse-by-category.php" class="nav__responsive-link">Browse Stores by Category</a>
                     </li>
                     <li>
                         <a href="FAQs.html" class="nav__responsive-link">FAQs</a>
@@ -91,89 +112,74 @@
 
     <body>
         <div class="grid">
-            <h1>Browse Stores</h1>
-            <h2>By Categories</h2>
+            <h1> <?php echo $productInformation['name'];?></h1>
+            <!--h1>Jordan 1 Retro High OFF-WHITE University Blue</h1-->
+            <h2><?php echo $productInformation['price'];?> ₫</h2>
             <div class="row">
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/T-SHIRT.webp" alt="store" class="store-logo"></a>
+                <div class="col p-6 t-6 m-12">
+                    <section id="snackbar-container"></section>
+                    <div class="center-btn">
+                        <button class="buy-add btn-success" onclick="add_btn()">Add To Cart</button>
                     </div>
                 </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/POLO.webp" alt="store" class="store-logo"></a>
+                <div class="col p-6 t-6 m-12">
+                    <div class="center-btn">
+                        <button class="buy-add" onclick="buy_btn()">Buy Now</button>
                     </div>
                 </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/SNEAKER.webp" alt="store" class="store-logo"></a>
-                    </div>
+            </div>
+            <hr>
+            <h1>Product's details</h1>
+            <h2>CODE: AQ0818-148</h2>
+            <h2>COLORWAY: WHITE/DARK POWDER BLUE-CONE</h2>
+            <div class="row product-detail">
+                <div class="col p-6 t-6 m-12">
+                    <img src="product-detail/jordan1.webp" alt="store" class="product-detail-img">
                 </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/HOODIE.webp" alt="store" class="store-logo"></a>
-                    </div>
+                <div class="col p-6 t-6 m-12">
+                    <img src="product-detail/jordan2.webp" alt="store" class="product-detail-img">
                 </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/ACCESSORIES.webp" alt="store" class="store-logo"></a>
-                    </div>
+                <div class="col p-6 t-6 m-12">
+                    <img src="product-detail/jordan3.webp" alt="store" class="product-detail-img">
                 </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/HAT.webp" alt="store" class="store-logo"></a>
-                    </div>
+                <div class="col p-6 t-6 m-12">
+                    <img src="product-detail/jordan4.webp" alt="store" class="product-detail-img">
                 </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/SLIPPER.webp" alt="store" class="store-logo"></a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/SLIDE.webp" alt="store" class="store-logo"></a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/BAG.webp" alt="store" class="store-logo"></a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/BELT.webp" alt="store" class="store-logo"></a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/WALLET.webp" alt="store" class="store-logo"></a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/SHIRT.webp" alt="store" class="store-logo"></a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/GLASSES.webp" alt="store" class="store-logo"></a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/BUCKET HAT.webp" alt="store" class="store-logo"></a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/JACKET.webp" alt="store" class="store-logo"></a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div>
-                        <a href="stores.html"><img src="categories-img/SHORT.webp" alt="store" class="store-logo"></a>
-                    </div>
-                </div>
+            </div>
+            <hr>
+            <h1>RECOMMENDED PRODUCTS</h1>
+            <div class="row">
+				<?php 
+					$storeList = $stores->getData();
+					$countStore = 1;
+					foreach($storeList as $storeInformation) {
+						if($countStore > 4) {
+							//show only 4 items recommended product 
+							break;
+						} 
+						$filter = [
+							['featured_in_mall', "TRUE"],
+							['store_id', $storeInformation['id']],
+							['id', '!=', $_GET['id']]
+						];
+						$getFirstRecord = true;
+						$productFeaturedItem = $products->getData($filter, $getFirstRecord);
+
+						if(!empty($productFeaturedItem)) {
+							$countStore++;
+							echo '<div class="col p-3 t-6 m-12">
+								<div class="products">
+									<a href="store.php?id=' . $storeInformation['id'] . '"><h3>' . $storeInformation['name'] . '</h3></a>
+									<a href="product-detail.php?id=' . $productFeaturedItem['id'] . '">
+										<img src="products-img/burberry-bag.webp" alt="store" class="products-img">
+										<h4>' . $productFeaturedItem['name'] . '</h4>
+										<h4>' . $productFeaturedItem['price'] . ' ₫</h4>
+									</a>
+								</div>
+							</div>';
+						}
+					}
+				?>
             </div>
         </div>
 
@@ -195,15 +201,16 @@
                 </div>
             </div>
           </div>
-
-        <script src="javascript/cookies.js"></script>
+        
+          <script src="javascript/checkLoginProduct.js"></script>
+          <script src="javascript/cookies.js"></script>
     </body>
 
     <footer class="footer__distributed">
         <div class="footer__left">
             <img src="logo.webp" class="footer__logo">
             <p class="footer__links">
-                <a href="index.html">HOME</a>
+                <a href="index.php">HOME</a>
                 |
                 <a href="about_us.html">ABOUT US</a>
                 |

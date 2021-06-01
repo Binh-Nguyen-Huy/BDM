@@ -1,10 +1,17 @@
+<?php include_once "file_exist.php" ?>
+
+<?php
+session_start();
+require 'cate_browse_function.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style_1.css">
         <title>BDM Mall</title>
     </head>
 
@@ -89,77 +96,49 @@
         </div>
     </header>
 
-    <body class="acc_img">
-        <div class="grid fees">
-            <h1>Subscription</h1>
-            <h2>Subscribe To Become High Fashion</h2>
+    <body>
+        <div class="grid">
+            <h1>Browse Stores</h1>
+            <h2>By Categories</h2>
             <div class="row">
                 <div class="col p-12 t-12 m-12">
-                    <table>
-                        <tr>
-                          <th>Member Subscription</th>
-                          <th>Prices</th>
-                        </tr>
-                        <tr>
-                            <td>Bronze Member</td>
-                            <td>19.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Silver Member</td>
-                            <td>29.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Gold Member</td>
-                            <td>49.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Platinum Member</td>
-                            <td>69.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Diamond Member</td>
-                            <td>109.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Titanium Member</td>
-                            <td>299.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>"You can have our store" Member</td>
-                            <td>999.000.000 ₫/Month</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <h1>Charges</h1>
-            <h2>For Store Owners</h2>
-            <div class="row">
-                <div class="col p-12 t-12 m-12">
-                    <table>
-                        <tr>
-                          <th>Fees Type</th>
-                          <th>Cost</th>
-                        </tr>
-                        <tr>
-                            <td>Renting Fee</td>
-                            <td>89.000.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Vietnam Value Added Tax (VAT)</td>
-                            <td>10%</td>
-                        </tr>
-                        <tr>
-                            <td>Commission Rate</td>
-                            <td>2.2%</td>
-                        </tr>
-                        <tr>
-                            <td>Service Rate</td>
-                            <td>1.5%</td>
-                        </tr>
-                        <tr>
-                            <td>Shipping Fee</td>
-                            <td>Depend on shipping unit</td>
-                    </table>
+                    <div class="select_form">
+                        <?php
+
+                            $test_search = [
+                                ['cate' => '1', 'type' => 'Department stores'],
+                                ['cate' => '2', 'type' => 'Grocery stores'],
+                                ['cate' => '3', 'type' => 'Restaurants'],
+                                ['cate' => '4', 'type' => 'Clothing stores'],
+                                ['cate' => '5', 'type' => 'Accessory stores'],
+                                ['cate' => '6', 'type' => 'Pharmacies'],
+                                ['cate' => '7', 'type' => 'Technology stores'],
+                                ['cate' => '8', 'type' => 'Pet stores'],
+                                ['cate' => '9', 'type' => 'Toy stores'],
+                                ['cate' => '10', 'type' => 'Specialty stores'],
+                                ['cate' => '11', 'type' => 'Thrift stores'],
+                                ['cate' => '12', 'type' => 'Services'],
+                                ['cate' => '13', 'type' => 'Kiosks']
+                            ];
+                        ?>
+                            <select name="name" id="option_form" onchange="location = this.value">
+                                <option value="" disabled selected>Select One Category</option>
+                                <?php
+                                        
+                                        foreach($test_search as $t)
+                                        {
+                                            $cate = $t['cate'];
+                                            $type = $t['type'];
+                                            echo "<option value='cate_browse.php?cate=$cate&type=$type'>$type</option>";
+                                        }
+                                        
+
+                                ?>
+                             </select>
+
+
+                            
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,7 +160,7 @@
                     <a href="">Learn More</a>
                 </div>
             </div>
-        </div>
+          </div>
 
         <script src="javascript/cookies.js"></script>
     </body>
@@ -192,9 +171,9 @@
             <p class="footer__links">
                 <a href="index.php">HOME</a>
                 |
-                <a href="about_us.html">ABOUT US</a>
+                <a href="about_us.php">ABOUT US</a>
                 |
-                <a href="fees.html">FEES</a>
+                <a href="fees.php">FEES</a>
                 |
                 <a href="my_account_2.html">MY ACCOUNT</a>
                 |

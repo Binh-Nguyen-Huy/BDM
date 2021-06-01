@@ -1,3 +1,10 @@
+<?php include_once "file_exist.php" ?>
+
+<?php
+session_start();
+require 'browse_function.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -89,78 +96,59 @@
         </div>
     </header>
 
-    <body class="acc_img">
-        <div class="grid fees">
-            <h1>Subscription</h1>
-            <h2>Subscribe To Become High Fashion</h2>
+    <body>
+        <div class="grid">
+            <h1>Browse Stores</h1>
+            <h2>By Name</h2>
             <div class="row">
-                <div class="col p-12 t-12 m-12">
-                    <table>
-                        <tr>
-                          <th>Member Subscription</th>
-                          <th>Prices</th>
-                        </tr>
-                        <tr>
-                            <td>Bronze Member</td>
-                            <td>19.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Silver Member</td>
-                            <td>29.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Gold Member</td>
-                            <td>49.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Platinum Member</td>
-                            <td>69.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Diamond Member</td>
-                            <td>109.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Titanium Member</td>
-                            <td>299.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>"You can have our store" Member</td>
-                            <td>999.000.000 ₫/Month</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <h1>Charges</h1>
-            <h2>For Store Owners</h2>
-            <div class="row">
-                <div class="col p-12 t-12 m-12">
-                    <table>
-                        <tr>
-                          <th>Fees Type</th>
-                          <th>Cost</th>
-                        </tr>
-                        <tr>
-                            <td>Renting Fee</td>
-                            <td>89.000.000 ₫/Month</td>
-                        </tr>
-                        <tr>
-                            <td>Vietnam Value Added Tax (VAT)</td>
-                            <td>10%</td>
-                        </tr>
-                        <tr>
-                            <td>Commission Rate</td>
-                            <td>2.2%</td>
-                        </tr>
-                        <tr>
-                            <td>Service Rate</td>
-                            <td>1.5%</td>
-                        </tr>
-                        <tr>
-                            <td>Shipping Fee</td>
-                            <td>Depend on shipping unit</td>
-                    </table>
-                </div>
+
+                <?php
+                    $store = read_all_products();
+                    $test_search = [
+                        ['name' => 'A', 'type' => '<img src="alphabet-img/A.webp" alt="store" class="store-logo">'],
+                        ['name' => 'B', 'type' => '<img src="alphabet-img/B.webp" alt="store" class="store-logo">'],
+                        ['name' => 'C', 'type' => '<img src="alphabet-img/C.webp" alt="store" class="store-logo">'],
+                        ['name' => 'D', 'type' => '<img src="alphabet-img/D.webp" alt="store" class="store-logo">'],
+                        ['name' => 'E', 'type' => '<img src="alphabet-img/E.webp" alt="store" class="store-logo">'],
+                        ['name' => 'F', 'type' => '<img src="alphabet-img/F.webp" alt="store" class="store-logo">'],
+                        ['name' => 'G', 'type' => '<img src="alphabet-img/G.webp" alt="store" class="store-logo">'],
+                        ['name' => 'H', 'type' => '<img src="alphabet-img/H.webp" alt="store" class="store-logo">'],
+                        ['name' => 'I', 'type' => '<img src="alphabet-img/I.webp" alt="store" class="store-logo">'],
+                        ['name' => 'J', 'type' => '<img src="alphabet-img/J.webp" alt="store" class="store-logo">'],
+                        ['name' => 'K', 'type' => '<img src="alphabet-img/K.webp" alt="store" class="store-logo">'],
+                        ['name' => 'L', 'type' => '<img src="alphabet-img/L.webp" alt="store" class="store-logo">'],
+                        ['name' => 'M', 'type' => '<img src="alphabet-img/M.webp" alt="store" class="store-logo">'],
+                        ['name' => 'N', 'type' => '<img src="alphabet-img/N.webp" alt="store" class="store-logo">'],
+                        ['name' => 'O', 'type' => '<img src="alphabet-img/O.webp" alt="store" class="store-logo">'],
+                        ['name' => 'P', 'type' => '<img src="alphabet-img/P.webp" alt="store" class="store-logo">'],
+                        ['name' => 'Q', 'type' => '<img src="alphabet-img/Q.webp" alt="store" class="store-logo">'],
+                        ['name' => 'R', 'type' => '<img src="alphabet-img/R.webp" alt="store" class="store-logo">'],
+                        ['name' => 'S', 'type' => '<img src="alphabet-img/S.webp" alt="store" class="store-logo">'],
+                        ['name' => 'T', 'type' => '<img src="alphabet-img/T.webp" alt="store" class="store-logo">'],
+                        ['name' => 'U', 'type' => '<img src="alphabet-img/U.webp" alt="store" class="store-logo">'],
+                        ['name' => 'V', 'type' => '<img src="alphabet-img/V.webp" alt="store" class="store-logo">'],
+                        ['name' => 'W', 'type' => '<img src="alphabet-img/W.webp" alt="store" class="store-logo">'],
+                        ['name' => 'X', 'type' => '<img src="alphabet-img/X.webp" alt="store" class="store-logo">'],
+                        ['name' => 'Y', 'type' => '<img src="alphabet-img/Y.webp" alt="store" class="store-logo">'],
+                        ['name' => 'Z', 'type' => '<img src="alphabet-img/Z.webp" alt="store" class="store-logo">'],
+                        ['name' => '0', 'type' => '<img src="alphabet-img/0.webp" alt="store" class="store-logo">'],
+                        ['name' => '1', 'type' => '<img src="alphabet-img/1.webp" alt="store" class="store-logo">'],
+                        ['name' => '2', 'type' => '<img src="alphabet-img/2.webp" alt="store" class="store-logo">'],
+                        ['name' => '3', 'type' => '<img src="alphabet-img/3.webp" alt="store" class="store-logo">'],
+                        ['name' => '4', 'type' => '<img src="alphabet-img/4.webp" alt="store" class="store-logo">'],
+                        ['name' => '5', 'type' => '<img src="alphabet-img/5.webp" alt="store" class="store-logo">'],
+                        ['name' => '6', 'type' => '<img src="alphabet-img/6.webp" alt="store" class="store-logo">'],
+                        ['name' => '7', 'type' => '<img src="alphabet-img/7.webp" alt="store" class="store-logo">'],
+                        ['name' => '8', 'type' => '<img src="alphabet-img/8.webp" alt="store" class="store-logo">'],
+                        ['name' => '9', 'type' => '<img src="alphabet-img/9.webp" alt="store" class="store-logo">']
+                    ];
+
+                    foreach($test_search as $t){
+                        $name = $t['name'];
+                        $type = $t['type'];
+                        echo nl2br("<div class='col p-1 t-3 m-6'><a href=\"browse.php?name=$name\">$type</a></div>" );
+                    }
+                ?>
             </div>
         </div>
 
@@ -181,7 +169,7 @@
                     <a href="">Learn More</a>
                 </div>
             </div>
-        </div>
+          </div>
 
         <script src="javascript/cookies.js"></script>
     </body>

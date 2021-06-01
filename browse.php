@@ -1,3 +1,10 @@
+<?php include_once "file_exist.php" ?>
+
+<?php
+session_start();
+require 'browse_function.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,14 +17,14 @@
 
     <header>
         <div class="nav">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="logo.webp" alt="logo" class="logo" />
             </a>
             <!-- Nav PC -->
             <nav class="nav__pc">
                 <ul class="nav__list">
                     <li>
-                        <a href="index.html" class="nav__link">HOME</a>
+                        <a href="index.php" class="nav__link">HOME</a>
                     </li>
                     <li>
                         <a href="about_us.html" class="nav__link">ABOUT US</a>
@@ -34,8 +41,8 @@
                             <a>BROWSE</a>
                         </label>
                         <div class="nav__drop-content">
-                            <a href="browse-by-name.html">Browse Stores by Name</a>
-                            <a href="browse-by-category.html">Browse Stores by Category</a>
+                            <a href="browse-by-name.php">Browse Stores by Name</a>
+                            <a href="browse-by-category.php">Browse Stores by Category</a>
                         </div>
                     </li>
                     <li>
@@ -58,7 +65,7 @@
             <nav class="nav__responsive">
                 <ul class="nav__responsive-list">
                     <li>
-                        <a href="index.html" class="nav__responsive-link">HOME</a>
+                        <a href="index.php" class="nav__responsive-link">HOME</a>
                     </li>
                     <li>
                         <a href="about_us.html" class="nav__responsive-link">ABOUT US</a>
@@ -70,10 +77,10 @@
                         <a href="my_account_2.html" class="nav__responsive-link">MY ACCOUNT</a>
                     </li>
                     <li>
-                        <a href="browse-by-name.html" class="nav__responsive-link">Browse Stores by Name</a>
+                        <a href="browse-by-name.php" class="nav__responsive-link">Browse Stores by Name</a>
                     </li>
                     <li>
-                        <a href="browse-by-category.html" class="nav__responsive-link">Browse Stores by Category</a>
+                        <a href="browse-by-category.php" class="nav__responsive-link">Browse Stores by Category</a>
                     </li>
                     <li>
                         <a href="FAQs.html" class="nav__responsive-link">FAQs</a>
@@ -91,83 +98,31 @@
 
     <body>
         <div class="grid">
-            <h1>NIKE</h1>
-            <h1>Jordan 1 Retro High OFF-WHITE University Blue</h1>
-            <h2>50.000.000 ₫</h2>
+            <h1>Browse Stores</h1>
+            <h2>By Name</h2>
+            <?php
+                $name = $_GET['name'];
+                echo "<div class='grid'><h2>Start with letter: " .$name. "</h2></div>";
+            ?>
             <div class="row">
-                <div class="col p-6 t-6 m-12">
-                    <section id="snackbar-container"></section>
-                    <div class="center-btn">
-                        <button class="buy-add btn-success" onclick="add_btn()">Add To Cart</button>
-                    </div>
-                </div>
-                <div class="col p-6 t-6 m-12">
-                    <div class="center-btn">
-                        <button class="buy-add" onclick="buy_btn()">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <h1>Product's details</h1>
-            <h2>CODE: AQ0818-148</h2>
-            <h2>COLORWAY: WHITE/DARK POWDER BLUE-CONE</h2>
-            <div class="row product-detail">
-                <div class="col p-6 t-6 m-12">
-                    <img src="product-detail/jordan1.webp" alt="store" class="product-detail-img">
-                </div>
-                <div class="col p-6 t-6 m-12">
-                    <img src="product-detail/jordan2.webp" alt="store" class="product-detail-img">
-                </div>
-                <div class="col p-6 t-6 m-12">
-                    <img src="product-detail/jordan3.webp" alt="store" class="product-detail-img">
-                </div>
-                <div class="col p-6 t-6 m-12">
-                    <img src="product-detail/jordan4.webp" alt="store" class="product-detail-img">
-                </div>
-            </div>
-            <hr>
-            <h1>RECOMMENDED PRODUCTS</h1>
-            <div class="row">
-                <div class="col p-3 t-6 m-12">
-                    <div class="products">
-                        <a href="Nike Store Page/nike.html"><h3>BURBERRY</h3></a>
-                        <a href="product-detail-2.html">
-                            <img src="products-img/burberry-bag.webp" alt="store" class="products-img">
-                            <h4>MINI LOGO GRAPHIC CANVAS AND LEATHER POCKET BAG</h4>
-                            <h4>23.800.000 ₫</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div class="products">
-                        <a href="LV Store Page/lv.html"><h3>LOUIS VUITTON</h3></a>
-                        <a href="product-detail-2.html">
-                            <img src="product-detail/lv.webp" alt="store" class="products-img">
-                            <h4>LOUIS VUITTON HORIZON WIRELESS EARPHONES</h4>
-                            <h4>33.000.000 ₫</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div class="products">
-                        <a href="Nike Store Page/nike.html"><h3>GIVENCHY</h3></a>
-                        <a href="product-detail-1.html">
-                            <img src="product-detail/gevenchy.webp" alt="store" class="products-img">
-                            <h4>GIVENCHY HOODIE RAINBOW IN JERSEY</h4>
-                            <h4>15.800.000 ₫</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col p-3 t-6 m-12">
-                    <div class="products">
-                        <a href="LV Store Page/lv.html"><h3>SAINT LAURENT</h3></a>
-                        <a href="product-detail-1.html">
-                            <img src="product-detail/saintlauren.webp" alt="store" class="products-img">
-                            <h4>SAINT LAURENT SWEET DREAM JACKET</h4>
-                            <h4>22.000.000 ₫</h4>
-                        </a>
-                    </div>
-                </div>
+                <?php
+                    $name = $_GET['name'];
+
+                    $store = get_store_search_name($name);
+                    $sub_store = [];
+                    if($store == false)
+                    {
+                        print_r("<div class='grid'><h2>sorry we currently don't have store name started with this character</h2></div>");
+                    }
+                    else
+                    {
+                        $sub_store = $store;
+                        foreach($sub_store as $hihi)
+                        {
+                            echo nl2br("<div class='col p-3 t-12 m-12'>$hihi[2]<pre><h3>$hihi[1]</h3><br><br></div>" );
+                        }
+                    }
+                ?>
             </div>
         </div>
 
@@ -189,16 +144,14 @@
                 </div>
             </div>
           </div>
-        
-          <script src="javascript/checkLoginProduct.js"></script>
-          <script src="javascript/cookies.js"></script>
-    </body>
 
+        <script src="javascript/cookies.js"></script>
+    </body>
     <footer class="footer__distributed">
         <div class="footer__left">
             <img src="logo.webp" class="footer__logo">
             <p class="footer__links">
-                <a href="index.html">HOME</a>
+                <a href="index.php">HOME</a>
                 |
                 <a href="about_us.html">ABOUT US</a>
                 |
@@ -206,9 +159,9 @@
                 |
                 <a href="my_account_2.html">MY ACCOUNT</a>
                 |
-                <a href="browse-by-name.html">Browse Stores by Name</a>
+                <a href="browse-by-name.php">Browse Stores by Name</a>
                 |
-                <a href="browse-by-category.html">Browse Stores by Category</a>
+                <a href="browse-by-category.php">Browse Stores by Category</a>
                 |
                 <a href="FAQs.html">FAQs</a>
                 |
@@ -225,13 +178,14 @@
                 <a href="#"><i class="fa fa-github"></i></a>
             </div>
             <p class="footer__links">
-                <a href="ToS.html">Term of Service</a>
+                <a href="tos.php">Term of Service</a>
                 |
-                <a href="privacy.html">Privacy Policy</a>
+                <a href="privacy.php">Privacy Policy</a>
                 |
-                <a href="copyright.html">Copyright</a>
+                <a href="copyright.php">Copyright</a>
             </p>
             <p class="footer__company-name">© 2021 BDM Team.</p>
         </div>
     </footer>
 </html>
+
